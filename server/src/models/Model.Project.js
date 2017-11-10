@@ -1,4 +1,4 @@
-import default database from '@/src/database/database.js'
+// import default database from '../database/database.js'
 
 export default class ModelProject {
 	constructor(data){

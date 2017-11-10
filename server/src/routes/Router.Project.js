@@ -1,25 +1,25 @@
 import express from 'express'
 
-import controllerProject from '@/src/controllers/Controller.Project.js'
+import controllerProject from '../controllers/Controller.Project.js'
 
-let router = express.Router()
+let routerProject = express.Router()
 
 let project = new controllerProject()
 
-router.get('/project', (req, res)=> {
+routerProject.get('/', (req, res)=> {
 	project.getById(req, res);
 })
 
-router.post('/project', (req, res)=> {
+routerProject.post('/post', (req, res)=> {
 	project.save(req, res);
 })
 
-router.put('/project', (req, res)=> {
+routerProject.put('/put', (req, res)=> {
 	project.updateById(req, res)
 })
 
-router.delete('/project', (req, res)=> {
+routerProject.delete('/delete', (req, res)=> {
 	project.deleteById(req, res)
 })
 
-export default router
+export default routerProject

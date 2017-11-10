@@ -1,25 +1,26 @@
 import express from 'express'
 
-import controllerUser from '@/src/controllers/Controller.User.js'
+import controllerUser from '../controllers/Controller.User.js'
 
-let router = express.Router()
+let routerUser = express.Router()
 
 let user = new controllerUser();
 
-router.get('/user',(req, res)=> {
+routerUser.get('/',(req, res)=> {
+	console.log('aqui')
 	user.getById(req, res);
 })
 
-router.post('/user',(req,res)=> {
+routerUser.post('/post',(req,res)=> {
 	user.save(req, res)
 })
 
-router.put('/user',(req, res)=> {
+routerUser.put('/put',(req, res)=> {
 	user.upDateById(req, res)
 })
 
-router.delete('/user', (req, res)=> {
+routerUser.delete('/delete', (req, res)=> {
 	user.deleteById(req, res)
 })
 
-export default router;
+export default routerUser;
