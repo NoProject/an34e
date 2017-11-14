@@ -2,27 +2,31 @@ import modelUser from '../models/Model.User.js'
 
 export default class controllerUser {
 	getById(req, res){
-		let user = new modelUser(req.body.user)
-		console.log("aqui")
-		res.send({data: user.readById()})
+		let user = new modelUser(req.body.user);
+		user.getById((data)=> {
+			res.send({data : data});
+		})
 	}
 
 	save(req, res){
-		let user = new modelUser(req.body.user)
-		user.create();
-		res.send({message : 'user created', data : user})
+		let user = new modelUser(req.body.user);
+		user.create((data)=>{
+			res.send({message : 'user created', data : data});
+		})
 	}
 
-	updateByid(req, res){
-		let user = new modelUser(req.body.user)
-		user.update()
-		res.send({message : 'user updated', data : user})
+	updateById(req, res){
+		let user = new modelUser(req.body.user);
+		user.update((data)=> {
+			res.send({message : 'user updated', data : data});
+		});
 	}
 
 	deleteById(req, res){
-		let user = new modelUser(req.body.user)
-		user.delete()
-		res.send({message : 'user deleted', data : user})
+		let user = new modelUser(req.body.user);
+		user.delete((data)=> {
+			res.send({message : 'user deleted', data : data});
+		});
 	}
 }
 

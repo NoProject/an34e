@@ -3,24 +3,29 @@ import modelTask from '../models/Model.Task.js'
 export default class controllerTask{
 	getById(req, res){
 		let task = new modelTask(req.body.task)
-		res.send(task.readById())
+		task.getById((data)=> {
+			res.send({data : data});
+		})
 	}
 
 	save(req, res){
 		let task = new modelTask(req.body.task)
-		task.create()
-		res.send({message : 'task created', data : task})
+		task.create((data)=> {
+			res.send({data : data});
+		})
 	}
 
 	updateById(req, res){
 		let task = new modelTask(req.body.task)
-		task.update()
-		res.send({message : 'task updated', data : task})
+		task.update((data)=> {
+			res.send({message : 'task updated', data : data})
+		})
 	}
 
 	deleteById(req, res){
 		let task = new modelTask(req.body.task)
-		task.delete()
-		res.send({message : 'task deleted', data : task})
+		task.delete((data)=> {
+			res.send({message : 'task deleted', data : task})
+		})
 	}
 }

@@ -16,7 +16,7 @@ routerUser.post('/post',(req,res)=> {
 })
 
 routerUser.put('/put',(req, res)=> {
-	user.upDateById(req, res)
+	user.updateById(req, res)
 })
 
 routerUser.delete('/delete', (req, res)=> {

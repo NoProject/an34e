@@ -3,24 +3,29 @@ import modelProject from '../models/Model.Project.js'
 export default class controllerProject {
 	getById(req, res){
 		let project = new modelProject(req.body.project)
-		res.send(project.readById())
+		project.getById((data)=> {
+			res.send({data : data});
+		})
 	}
 
 	save(req, res){
 		let project = new modelProject(req.body.project)
-		project.create()
-		res.send({message : 'created project', data : project})
+		project.create((data)=> {
+			res.send({data : data});
+		})
 	}
 
 	updateById(req, res){
 		let project = new modelProject(req.body.project)
-		project.uptade()
-		res.send({message : 'updated project', data : project})
+		project.uptade((data)=> {
+			res.send({data : data});
+		})
 	}
 
 	deleteById(req, res){
 		let project = new modelProject(req.body.project)
-		project.delete()
-		res.send({message : 'deleted project', data : project})
+		project.delete((data)=> {
+			res.send({data : data});
+		})
 	}
 }

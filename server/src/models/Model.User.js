@@ -3,23 +3,64 @@ import mongoose from 'mongoose'
 
 export default class ModelUser {
 	constructor(data){
-		this._data = data
+		this._data = data;
 	}
-	readById() {
-		let result
-
+	getById(callback) {
 		let conn = new database();
-		conn.connect((result)=>{
-			console.log(result)
+		conn.connection((data)=> {
+			data.collection('user').find().toArray()
+				.then((data) => {
+					callback(data);
+					data.close();
+				})
+				.catch((err)=>{
+					console.log(err);
+				})
 		})
-		//console.log(database)
-		/*conn.collection('user').find({name : 'carlos'})
-			.then((data)=> {
-				result = data
-			})
-			.err((err)=> {
-				console.log(err)
-			})*/
-			/*return result*/
 	}
+
+	create(callback){
+		let conn = new database();
+		conn.connection((data)=> {
+			data.collection('user').insertOne({ name : this._data.name,
+																					email : this._data.email,
+																					password: this._data.password})
+				.then((data)=> {
+					callback(data);
+				})
+				.catch((err)=> {
+					console.log(err);
+				})
+				data.close();
+		})
+	}
+
+	update(callback){
+		let conn = new database();
+		conn.connection((data)=> {
+			data.collection('user').updateOne({name : this._data.name}, {$set: {email : this._data.email}})
+				.then((data)=> {
+					callback(data);
+				})
+				.catch((err)=> {
+					console.log(err);
+				})
+				data.close();
+		})
+	}
+
+	delete(callback){
+		let conn = new database();
+		conn.connection((data)=> {
+			data.collection('user').deleteOne({email : this._data.email})
+				.then((data)=> {
+					callback(data);
+				})
+				.catch((err)=> {
+					console.log(err);
+				})
+				data.close();
+		})
+	}
+
 }

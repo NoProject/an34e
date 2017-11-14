@@ -9,7 +9,9 @@ import cors from 'cors'
 
 //import controllerUser from '../controllers/Controller.User.js'
 
-// import database from './database/database.js'
+//import database from './database/database.js'
+
+//const db = new database();
 
 let app = express();
 
