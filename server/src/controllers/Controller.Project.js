@@ -17,7 +17,7 @@ export default class controllerProject {
 
 	updateById(req, res){
 		let project = new modelProject(req.body.project)
-		project.uptade((data)=> {
+		project.update((data)=> {
 			res.send({data : data});
 		})
 	}

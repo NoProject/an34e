@@ -7,7 +7,7 @@ export default class ModelTask {
 
 	getById(callback){
 		let conn = new database();
-		conn.connect((data)=> {
+		conn.connection((data)=> {
 			data.collection('task').find().toArray()
 				.then((data)=> {
 					callback(data);
@@ -21,7 +21,7 @@ export default class ModelTask {
 
 	update(callback){
 		let conn = new database();
-		conn.connect((data)=> {
+		conn.connection((data)=> {
 			data.collection('task').updateOne({name : this._data.name}, {$set : { name : this._data.name,
 																																						description : this._data.description,
 																																						deadline : this._data.deadline,
@@ -41,7 +41,7 @@ export default class ModelTask {
 
 	create(callback){
 		let conn = new database();
-		conn.connect((data)=> {
+		conn.connection((data)=> {
 			data.collection('task').insertOne({ name : this._data.name,
 																					description : this._data.description,
 																					deadline : this._data.deadline,
@@ -61,7 +61,7 @@ export default class ModelTask {
 
 	delete(callback){
 		let conn = new database();
-		conn.connect((data)=> {
+		conn.connection((data)=> {
 			data.collection('task').deleteOne({name : this._data.name})
 				.then((data)=> {
 					callback(data);

@@ -1,5 +1,4 @@
 import database from '../database/database.js'
-import mongoose from 'mongoose'
 
 export default class ModelUser {
 	constructor(data){

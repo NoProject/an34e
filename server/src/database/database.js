@@ -1,4 +1,5 @@
 import mongodb from 'mongodb'
+import autoIncrement from 'mongodb-autoincrement'
 
 export default class database{
 	connection(callback){
