@@ -7,3 +7,5 @@ Carlos Roberto Ferreira Sanches
 Nelson Boralli Neto
 
 Rodrigo Miyashiro Mucci
+
+Thiago Oliveira de Souza
