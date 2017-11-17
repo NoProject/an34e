@@ -28,6 +28,17 @@ export default class controllerUser {
 			res.send({message : 'user deleted', data : data});
 		});
 	}
+
+	verifyLogin(req, res){
+		let user = new modelUser(req.body.user);
+		user.verify((data)=>{
+			console.log(data);
+			if(!data[0])
+				res.send({message : 'login error'})
+			else
+				res.send({message : 'logged'})
+		})
+	}
 }
 
 

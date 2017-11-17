@@ -12,15 +12,19 @@ routerUser.get('/',(req, res)=> {
 })
 
 routerUser.post('/post',(req,res)=> {
-	user.save(req, res)
+	user.save(req, res);
 })
 
 routerUser.put('/put',(req, res)=> {
-	user.updateById(req, res)
+	user.updateById(req, res);
 })
 
 routerUser.delete('/delete', (req, res)=> {
-	user.deleteById(req, res)
+	user.deleteById(req, res);
+})
+
+routerUser.post('/login',(req, res)=> {
+	user.verifyLogin(req,res);
 })
 
 export default routerUser;

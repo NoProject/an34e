@@ -62,4 +62,17 @@ export default class ModelUser {
 		})
 	}
 
+	verify(callback){
+		let conn = new database();
+		conn.connection((data)=> {
+			data.collection('user').find({name : this._data.name, password : this._data.password}).toArray()
+				.then((data)=> {
+					callback(data);
+				})
+				.catch((err)=> {
+					console.log(err);
+				})
+		})
+	}
+
 }
