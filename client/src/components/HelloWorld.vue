@@ -27,7 +27,7 @@
   </div>
 </template>
 
-<script>
+<script >
 import LoginServices from '@/services/LoginServices'
 
 export default {
