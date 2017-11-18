@@ -6,6 +6,7 @@ import express from 'express'
 import bodyParser from 'body-parser'
 import morgan from 'morgan'
 import cors from 'cors'
+import session from 'express-session'
 
 //import controllerUser from '../controllers/Controller.User.js'
 
@@ -19,7 +20,11 @@ let app = express();
 
 app.use(bodyParser.json())
 app.use(morgan('combined'))
-app.use(cors());
+app.use(cors())
+app.use(session({
+	secret: 'A1pt3Eds@31_231spaA',
+	cookie : {maxAge : 50000}
+}))
 
 app.use('/user', RouterUser)
 app.use('/project', RouterProject)
