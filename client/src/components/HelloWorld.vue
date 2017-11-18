@@ -9,7 +9,7 @@
       <div class="container">
         <header class="row">
         <p class="text-center">xXx</p>
-        <!-- <img src=""> -->
+        
         </header>
         <section class="row">
           <div class="col-md-6">
@@ -19,7 +19,7 @@
             That's what happened with Obsidian Frontier, a sandbox-style campaign set in the World of Greyhawk. We launched it as a playtest campaign for D&D 5th Edition in October 2014. Two years and thirty-four sessions later, the playtest is still running, and the campaign's still going.</p>
           </div>
           <div class="col-md-6">
-          
+
           </div>
         </section>
       </div>
