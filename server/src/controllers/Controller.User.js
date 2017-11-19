@@ -30,6 +30,7 @@ export default class controllerUser {
 	}
 
 	verifyLogin(req, res){
+		console.log(req.body)
 		let user = new modelUser(req.body.user);
 		user.verify((data)=>{
 			console.log(data);
