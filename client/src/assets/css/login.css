@@ -1,8 +1,8 @@
-/*@font-face {
+@font-face {
   font-family: 'Cataclysmo';
   src: url(../fonts/Cataclysmo.otf) format('OpenType');
 }
-@font-face {
+/*@font-face {
   font-family: 'KlavikaBold';
   src: url(../fonts/KlavikaBold/KlavikaBold.otf) format('OpenType');
 }
@@ -68,7 +68,7 @@ body{
 }*/
 
 main{
-  margin: 40px 0;
+  margin: 20px 0;
 }
 
 h1{
@@ -108,7 +108,11 @@ h1{
   font-size: 20px;
   font-weight: bold;
   color: #fff;
+<<<<<<< HEAD
   text-decoration: none!important;
+=======
+  text-decoration: none !important;
+>>>>>>> 99c01ebb60989ffdd5156e37532720efdb063bb1
   z-index: 1;
   position: relative;
   top: 1px;
@@ -116,7 +120,7 @@ h1{
 }
 
 .top-nav a:hover{
-  border-bottom: 2px solid orange;
+  border-bottom: 1px solid orange;
   transition: 0.3s;
   color: orange;
 }
@@ -131,6 +135,7 @@ h1{
 
 .fields{
   padding: 0 30px 20px;
+  min-height: 337px; 
 }
 
 .fields input{

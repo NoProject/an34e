@@ -15,56 +15,19 @@
     <!-- <div class="pre-loader"></div> -->
     <main class="container">
       <div class="row">
-        <div class="col-md-7 col-sm-6 col-xs-12">
+        <div class="col-md-8 col-sm-6 col-xs-12">
           <h1> Fácil para problemas difíceis</h1>
           <p class="desc">Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.</p>
         </div>
 
-        <div class="col-md-5 col-sm-6 col-xs-12">
+        <div class="col-md-4 col-sm-6 col-xs-12">
           <div class="login-area">
             <div class="top-nav">
-              <a class="sign-in" href="#" onclick="do()">Sign in</a>
-              <a class="sign-up" href="#">Register</a>
+              <a class="sign-in" href="#" @click="hideSignIn">Sign in</a>
+              <a class="sign-up" href="#" @click="hideSignUp">Register</a>
             </div>
-            <div class="signin">
-              <div class="fields">
-                <form action="post">
-                  <label for="email">Email address</label>
-                  <input type="email" class="form-control" id="email" placeholder="Enter email">
-
-                  <label for="password">Password</label>
-                  <input type="password" class="form-control" id="password" placeholder="Password">
-
-
-                  <div class="itens-alias">
-                    <input type="checkbox" name="keep-signed" value="1">
-                    <span class="keep"> Keep me signed in </span>
-                    <a class="forgot" href="#">Forgot your password?</a>
-                  </div>
-                  <input class="btn btn-primary" type="submit" value="Sign in">
-                </form>
-              </div>
-            </div>
-
-            <div class="signup">
-              <div class="fields">
-                <form action="post">
-                  <label for="username">Username</label>
-                  <input type="text" class="form-control" id="username" placeholder="Choose username">
-
-                  <label for="email">Email</label>
-                  <input type="email" class="form-control" id="email" placeholder="Enter email">
-
-                  <label for="password">Password</label>
-                  <input type="password" class="form-control" id="password" placeholder="Password">
-
-                  <label for="password">Repeat Password</label>
-                  <input type="password" class="form-control" id="password" placeholder="Password">
-
-                  <input class="btn btn-primary" type="submit" value="Register for free">
-                </form>
-              </div>
-            </div>
+              <Sign-in id="sign-in"></Sign-in>
+              <Sign-up id="sign-up" style="display: none"></Sign-up>
           </div>
         </div>
 
@@ -86,28 +49,21 @@
 
 
 <script>
-import LoginServices from '@/services/LoginServices'
-// import jquery from 'Jquery'
-// var $ = window.jQuery = require('jquery')
-
 export default {
   name: 'login',
-  data () {
-    return {
-      user: {
-        username: '',
-        password: ''
-      }
-    }
-  },
   methods: {
-    async login () {
-      await LoginServices.doLogin({
-        user: {
-          username: this.username,
-          password: this.password
-        }
-      })
+    hideSignIn () {
+      console.log(2)
+      let signIn = document.getElementById('sign-up')
+      let signUp = document.getElementById('sign-in')
+      signIn.style.display = 'none'
+      signUp.style.display = 'block'
+    },
+    hideSignUp () {
+      let signIn = document.getElementById('sign-up')
+      let signUp = document.getElementById('sign-in')
+      signIn.style.display = 'block'
+      signUp.style.display = 'none'
     }
     // loading () {
     //   window.onload = function () {
