@@ -5,7 +5,7 @@ import App from './App'
 import router from './router'
 import signin from './components/Signin'
 import signup from './components/Signup'
-// import jquery from 'Jquery'
+import jquery from 'Jquery'
 
 Vue.config.productionTip = false
 // Vue.use(jquery)

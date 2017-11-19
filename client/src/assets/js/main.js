@@ -1,4 +1,4 @@
-// 
-// $(document).ready(function(){
-//   $('.signin').css('display', 'none');
-// });
+$(document).ready(function(){
+  alert("teste");
+  // $('.signin').css('display', 'none');
+});
