@@ -41,6 +41,12 @@ export default {
           name: this.username,
           password: this.password
         }
+      }, (res) => {
+        if (res.data.message === 'logged') {
+          this.$router.push({name: 'dashboard'})
+        } else {
+          alert('deu ruim')
+        }
       })
     }
   }

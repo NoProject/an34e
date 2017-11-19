@@ -2,7 +2,7 @@ import modelProject from '../models/Model.Project.js'
 
 export default class controllerProject {
 	getById(req, res){
-		let project = new modelProject(req.body.project)
+		let project = new modelProject(req.session.user)
 		project.getById((data)=> {
 			res.send({data : data});
 		})
