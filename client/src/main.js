@@ -5,9 +5,10 @@ import App from './App'
 import router from './router'
 import signin from './components/Signin'
 import signup from './components/Signup'
+// import jquery from 'Jquery'
 
 Vue.config.productionTip = false
-
+// Vue.use(jquery)
 Vue.component('Sign-in', signin)
 Vue.component('Sign-up', signup)
 /* eslint-disable no-new */
