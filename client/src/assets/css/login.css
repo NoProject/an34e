@@ -108,11 +108,7 @@ h1{
   font-size: 20px;
   font-weight: bold;
   color: #fff;
-<<<<<<< HEAD
   text-decoration: none!important;
-=======
-  text-decoration: none !important;
->>>>>>> 99c01ebb60989ffdd5156e37532720efdb063bb1
   z-index: 1;
   position: relative;
   top: 1px;
@@ -135,7 +131,7 @@ h1{
 
 .fields{
   padding: 0 30px 20px;
-  min-height: 337px; 
+  min-height: 337px;
 }
 
 .fields input{
