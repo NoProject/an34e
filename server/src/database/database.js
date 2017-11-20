@@ -4,7 +4,7 @@ import autoIncrement from 'mongodb-autoincrement'
 export default class database{
 	connection(callback){
 		let connection = mongodb.MongoClient
-		connection.connect('mongodb://localhost:27017/test')
+		connection.connect('mongodb://noproject:noprojectnosql@ds115396.mlab.com:15396/projectx')
 			.then((data)=>{
 				console.log('database conected')
 				callback(data)
