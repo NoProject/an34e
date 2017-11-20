@@ -1,1 +1,1 @@
-web: node client/build/dev-server.js && nodemon server/src/index.js --exec babel-node
+web: ./start.sh
