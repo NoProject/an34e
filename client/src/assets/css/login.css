@@ -11,10 +11,23 @@
   src: url(../fonts/KlavikaLight/KlavikaLight.otf) format('OpenType');
 }*/
 
-
 /***************
     HEADER
 ***************/
+
+.pre-loader{
+  position: absolute;
+   left: 0px;
+   right: 0px;
+   bottom: 0px;
+   top: 0px;
+   background: #161616;
+   background-image: url(../img/Eclipse.svg);
+   background-position: center;
+   background-repeat: no-repeat;
+   z-index: 9999;
+}
+
 body{
   background: url(../img/air-controll.jpg);
   background-position: center;
@@ -95,7 +108,11 @@ h1{
   font-size: 20px;
   font-weight: bold;
   color: #fff;
+<<<<<<< HEAD
+  text-decoration: none!important;
+=======
   text-decoration: none !important;
+>>>>>>> 99c01ebb60989ffdd5156e37532720efdb063bb1
   z-index: 1;
   position: relative;
   top: 1px;
@@ -184,8 +201,6 @@ footer img{
   position: relative;
   top: -3px;
 }
-
-
 
 /***************
     QUERIES

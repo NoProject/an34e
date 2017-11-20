@@ -12,6 +12,7 @@
       <span class="task">Task</span>Manager <span class="x">x</span>
     </header>
 
+    <!-- <div class="pre-loader"></div> -->
     <main class="container">
       <div class="row">
         <div class="col-md-8 col-sm-6 col-xs-12">
@@ -41,8 +42,6 @@
       </a>
     </footer>
 
-    <!-- <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
-    <script src="assets/js/main.js" type="text/javascript"></script> -->
   </body>
 </html>
 </template>
@@ -66,6 +65,42 @@ export default {
       signIn.style.display = 'block'
       signUp.style.display = 'none'
     }
+    // loading () {
+    //   window.onload = function () {
+    //     var objeto = document.getElementById('pre-loader')
+    //
+    //     function fadeIn (element, time) {
+    //       processa(element, time, 0, 100)
+    //     }
+    //     function fadeOut (element, time) {
+    //       processa(element, time, 500, 0)
+    //     }
+    //     fadeOut(objeto, 1)
+    //   }
+    //   function processa (element, time, initial, end) {
+    //     if (initial === 0) {
+    //       var increment = 2;
+    //       element.style.display = 'block'
+    //     }
+    //     else {
+    //       var increment = -2
+    //     }
+    //     opc = initial
+    //
+    //    intervalo = setInterval (function() {
+    //      if ((opc == end)) {
+    //        if (end == 0) {
+    //          element.style.display = "none"
+    //        }
+    //        clearInterval (intervalo)
+    //    }else {
+    //       var opc = opc + increment
+    //       element.style.opacity = opc/100
+    //       element.style.filter = "alpha(opacity="+opc+")"
+    //       }
+    //    },time * 10)
+    //   }
+    // }
   }
 }
 </script>
