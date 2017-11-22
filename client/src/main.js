@@ -5,7 +5,7 @@ import App from './App'
 import router from './router'
 import signin from './components/Signin'
 import signup from './components/Signup'
-// import jQuery from 'jquery';
+// import jQuery from 'jquery'
 // global.jQuery = jQuery
 // global.$ = jQuery
 /* eslint-disable no-new */
