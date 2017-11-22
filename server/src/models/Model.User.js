@@ -7,14 +7,16 @@ export default class ModelUser {
 	getById(callback) {
 		let conn = new database();
 		conn.connection((data)=> {
-			data.collection('user').find().toArray()
+			console.log(data)
+			data.collection('users').find().toArray()
 				.then((data) => {
+					console.log(data)
 					callback(data);
-					data.close();
 				})
 				.catch((err)=>{
 					console.log(err);
 				})
+				data.close();
 		})
 	}
 
@@ -72,6 +74,7 @@ export default class ModelUser {
 				.catch((err)=> {
 					console.log(err);
 				})
+				data.close();
 		})
 	}
 

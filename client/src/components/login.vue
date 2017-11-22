@@ -1,4 +1,4 @@
-<template>
+  <template>
 <html class="login">
   <head>
     <meta charset="utf-8">
