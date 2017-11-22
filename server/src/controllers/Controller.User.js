@@ -30,14 +30,13 @@ export default class controllerUser {
 	}
 
 	verifyLogin(req, res){
-		console.log(req.body)
 		let user = new modelUser(req.body.user);
 		user.verify((data)=>{
-			console.log(data);
 			if(!data[0])
 				res.send({message : 'login error'})
 			else{
-				req.session.user = data.user.name
+				let sess = req.session
+				sess.user = data[0].username
 				res.send({message : 'logged'})
 			}
 		})

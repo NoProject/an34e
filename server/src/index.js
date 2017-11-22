@@ -22,8 +22,9 @@ app.use(bodyParser.json())
 app.use(morgan('combined'))
 app.use(cors())
 app.use(session({
+	path: '/',
 	secret: 'A1pt3Eds@31_231spaA',
-	cookie : {maxAge : 50000}
+	cookie : {maxAge : 6000000}
 }))
 
 app.use('/user', RouterUser)

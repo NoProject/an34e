@@ -10,7 +10,6 @@ export default class ModelUser {
 			console.log(data)
 			data.collection('users').find().toArray()
 				.then((data) => {
-					console.log(data)
 					callback(data);
 				})
 				.catch((err) => {
