@@ -8,7 +8,7 @@ export default class ModelProject {
 	getById(callback) {
 		let conn = new database();
 		conn.connection((data) => {
-			data.collection('projects').find({ 'managers': this._data.name }).toArray()
+			data.collection('projects').find({ "managers": { "user_mng_name": this._data.name } }).toArray()
 				.then((data) => {
 					callback(data);
 				})
@@ -29,6 +29,12 @@ export default class ModelProject {
 				description: this._data.description,
 				managers: this._data.managers,
 				developers: this._data.developers
+				// managers: [
+				// 	{user_mng_name: this._data.managers}
+				// ],
+				// developers: [
+				// 	{user_dev_name: this._data.developers}
+				// ]
 			})
 				.then((data) => {
 					callback(data);
@@ -50,6 +56,12 @@ export default class ModelProject {
 					description: this._data.description,
 					managers: this._data.managers,
 					developers: this._data.developers
+					// managers: [
+					// 	{user_mng_name: this._data.managers}
+					// ],
+					// developers: [
+					// 	{user_dev_name: this._data.developers}
+					// ]
 				}
 			})
 				.then((data) => {
