@@ -11,7 +11,6 @@ export default class ModelProject {
 			console.log(this._data)
 			data.collection('project').find({'managers.user_mng_name' : this._data}).toArray()
 				.then((data)=> {
-					callback(data);
 				})
 				.catch((err) => {
 					console.log(err);
@@ -30,6 +29,12 @@ export default class ModelProject {
 				description: this._data.description,
 				managers: this._data.managers,
 				developers: this._data.developers
+				// managers: [
+				// 	{user_mng_name: this._data.managers}
+				// ],
+				// developers: [
+				// 	{user_dev_name: this._data.developers}
+				// ]
 			})
 				.then((data) => {
 					callback(data);
@@ -51,6 +56,12 @@ export default class ModelProject {
 					description: this._data.description,
 					managers: this._data.managers,
 					developers: this._data.developers
+					// managers: [
+					// 	{user_mng_name: this._data.managers}
+					// ],
+					// developers: [
+					// 	{user_dev_name: this._data.developers}
+					// ]
 				}
 			})
 				.then((data) => {
