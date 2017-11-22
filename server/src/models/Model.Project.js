@@ -1,67 +1,75 @@
 import database from '../database/database.js'
 
 export default class ModelProject {
-	constructor(data){
+	constructor(data) {
 		this._data = data;
 	}
 
-	getById(callback){
+	getById(callback) {
 		let conn = new database();
-		conn.connection((data)=> {
-			data.collection('project').find({'managers' : this._data.name}).toArray()
-				.then((data)=> {
+		conn.connection((data) => {
+			data.collection('projects').find({ 'managers': this._data.name }).toArray()
+				.then((data) => {
 					callback(data);
 				})
-				.catch((err)=> {
+				.catch((err) => {
 					console.log(err);
 				})
-				data.close();
+			data.close();
 		})
 	}
 
-	create(callback){
+	create(callback) {
 		let conn = new database();
-		conn.connection((data)=>{
-			data.collection('project').insertOne({name : this._data.name,
-																						startDate : this._data.startDate,
-																						finishDate : this._data.finishDate,
-																						managers : this._data.managers,
-																						developers : this._data.developers})
-				.then((data)=> {
+		conn.connection((data) => {
+			data.collection('projects').insertOne({
+				name: this._data.name,
+				startdate: this._data.startDate,
+				finishdate: this._data.finishDate,
+				description: this._data.description,
+				managers: this._data.managers,
+				developers: this._data.developers
+			})
+				.then((data) => {
 					callback(data);
 				})
-				.catch((err)=> {
+				.catch((err) => {
 					console.log(err)
 				})
-				data.close();
+			data.close();
 		})
 	}
 
-	update(callback){
+	update(callback) {
 		let conn = new database();
-		conn.connection((data)=> {
-			data.collection('project').updateOne({name : this._data.name}, {$set : {startDate : this._data.startDate,
-																																				finishDate : this._data.finishDate,
-																																				managers : this._data.managers,
-																																				developers : this._data.developers}})
-				.then((data)=> {
+		conn.connection((data) => {
+			data.collection('projects').updateOne({ name: this._data.name }, {
+				$set: {
+					startdate: this._data.startDate,
+					finishdate: this._data.finishDate,
+					description: this._data.description,
+					managers: this._data.managers,
+					developers: this._data.developers
+				}
+			})
+				.then((data) => {
 					callback(data);
 				})
-				.catch((err)=> {
+				.catch((err) => {
 					console.log(err);
 				})
-				data.close();
+			data.close();
 		})
 	}
 
-	delete(callback){
+	delete(callback) {
 		let conn = new database();
-		conn.connection((data)=> {
-			data.collection('project').deleteOne({name : this._data.name})
-				.then((data)=> {
+		conn.connection((data) => {
+			data.collection('projects').deleteOne({ name: this._data.name })
+				.then((data) => {
 					callback(data);
 				})
-				.catch((err)=> {
+				.catch((err) => {
 					console.log(err);
 				})
 		})
