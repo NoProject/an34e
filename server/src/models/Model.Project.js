@@ -8,7 +8,7 @@ export default class ModelProject {
 	getById(callback){
 		let conn = new database();
 		conn.connection((data)=> {
-			data.collection('project').find({'managers' : this._data.name}).toArray()
+			data.collection('project').find({'managers.user_mng_name' : req.session.user}).toArray()
 				.then((data)=> {
 					callback(data);
 				})

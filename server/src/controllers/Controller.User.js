@@ -37,7 +37,7 @@ export default class controllerUser {
 			if(!data[0])
 				res.send({message : 'login error'})
 			else{
-				req.session.user = data.user
+				req.session.user = data.user.name
 				res.send({message : 'logged'})
 			}
 		})
