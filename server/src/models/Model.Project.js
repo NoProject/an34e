@@ -8,8 +8,8 @@ export default class ModelProject {
 	getById(callback) {
 		let conn = new database();
 		conn.connection((data)=> {
-			console.log(this._data)
-			data.collection('project').find({'managers.user_mng_name' : this._data}).toArray()
+			// console.log(this._data)
+			data.collection('projects').find().toArray()
 				.then((data)=> {
 				})
 				.catch((err) => {
