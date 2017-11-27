@@ -11,7 +11,7 @@ export default {
       })
   },
   post (params, callback) {
-    api().post('/project/post')
+    api().post('/project/post', params)
       .then((res) => {
         callback(res)
       })
