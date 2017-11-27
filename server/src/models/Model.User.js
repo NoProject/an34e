@@ -67,13 +67,14 @@ export default class ModelUser {
 
 	verify(callback) {
 		let conn = new database();
-		conn.connection((data) => {
+		conn.connection((data,err) => {
+			if (err) {console.log(err)}
 			data.collection('users').find({ username: this._data.name, password: this._data.password }).toArray()
 				.then((data) => {
 					callback(data);
 				})
 				.catch((err) => {
-					console.log(err);
+					callback(err);
 				})
 				data.close();
 		})
