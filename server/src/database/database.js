@@ -10,7 +10,7 @@ export default class database{
 				callback(data)
 			})
 			.catch((err)=>{
-				console.log(err)
+				callback(err)
 			})
 	}
 }

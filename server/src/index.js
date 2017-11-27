@@ -20,7 +20,12 @@ let app = express();
 
 app.use(bodyParser.json())
 app.use(morgan('combined'))
-app.use(cors())
+app.use(cors({
+	//cors configuration
+	origin: ['http://localhost:8080'],
+	methods: ['GET', 'POST', 'PUT', 'DELETE'],
+	credentials: true
+}))
 app.use(session({
 	path: '/',
 	secret: 'A1pt3Eds@31_231spaA',

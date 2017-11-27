@@ -41,7 +41,10 @@ export default {
           name: this.username,
           password: this.password
         }
-      }, (res) => {
+      }, (res, err) => {
+        if (err) {
+          console.log(err)
+        }
         if (res.data.message === 'logged') {
           this.$router.push({name: 'dashboard'})
         } else {

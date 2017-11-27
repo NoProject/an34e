@@ -7,10 +7,11 @@ export default class ModelProject {
 
 	getById(callback) {
 		let conn = new database();
-		conn.connection((data)=> {
-			// console.log(this._data)
-			data.collection('projects').find().toArray()
-				.then((data)=> {
+		conn.connection((data) => {
+
+			data.collection('projects').find({ 'managers': this._data }).toArray()
+				.then((data) => {
+					callback(data);
 				})
 				.catch((err) => {
 					console.log(err);
