@@ -10,6 +10,7 @@
         </div>
       </div>
     </div>
+    <button @click="addProject">Add Project</button>
   </div>
 </template>
 <script>
@@ -30,6 +31,9 @@ export default {
       await ProjectServices.get((res) => {
         this.dashboard = res.data.projects
       })
+    },
+    addProject () {
+      this.$router.push({name: 'addproject'})
     }
   }
 }

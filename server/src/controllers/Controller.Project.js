@@ -11,8 +11,10 @@ export default class controllerProject {
 
 	save(req, res){
 		let project = new modelProject(req.body.project)
+		project.managers = [req.session.user]
+		project.developers = []
 		project.create((data)=> {
-			res.send({data : data});
+			res.send({message : 'adicionado'});
 		})
 	}
 
