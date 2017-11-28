@@ -1,6 +1,20 @@
 <template>
   <div class="dashboard">
-    <header></header>
+    <header>
+      <div class="container">
+        <div class="row">
+          <div class="col-md-8">
+
+            <!-- search -->
+            <div class="search">
+              <input class="btn" type="search" name="search"/>
+              Botao pesquisa
+              <span class="search-icon"></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
   	<div class="container">
       <div class="col-md-6">
         <h1>Projects</h1>

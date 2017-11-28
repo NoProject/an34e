@@ -163,9 +163,20 @@ input[type=checkbox]{
   font-size: 18px;
   font-weight: bold;
 }
+/*hover*/
 .fields .btn:hover{
   cursor: pointer;
   background: #ff6600;
+}
+/*focus*/
+.btn-primary.focus, .btn-primary:focus {
+    box-shadow: 0 0 0 0.2rem rgba(251, 124, 20, 1);
+    background: #ff6600;
+}
+/*active*/
+.btn-primary.active, .btn-primary:active {
+    background: #ff6600!important;
+    box-shadow: 0 0 0 0.2rem rgba(251, 124, 20, 1)!important;
 }
 
 .fields .form-control:focus{
