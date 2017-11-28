@@ -2,17 +2,20 @@ import modelProject from '../models/Model.Project.js'
 
 export default class controllerProject {
 	getById(req, res){
-		console.log(req)
-		let project = new modelProject(req.sessionStore.sessions.user)
+		let project = new modelProject(req.session.user)
 		project.getById((data)=> {
-			res.send({data : data});
+			console.log(data)
+			res.send({projects : data});
 		})
 	}
 
 	save(req, res){
 		let project = new modelProject(req.body.project)
+		console.log(req.session.user)
+		project._data.managers = [req.session.user]
 		project.create((data)=> {
-			res.send({data : data});
+			console.log(data)
+			res.send({message : 'adicionado'});
 		})
 	}
 

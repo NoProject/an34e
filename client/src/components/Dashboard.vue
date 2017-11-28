@@ -18,12 +18,13 @@
   	<div class="container">
       <div class="col-md-6">
         <h1>Projects</h1>
-        <div class"projects" v-for="project in projects">
-          <h1>{{project.title}}</h1>
-          <p>{{project.description}}</p>
+        <div class="projects" v-for="item in dashboard">
+          <h2>{{ item.name }}</h2>
+          <p>{{ item.description }}</p>  
         </div>
       </div>
     </div>
+    <button @click="addProject">Add Project</button>
   </div>
 </template>
 <script>
@@ -33,7 +34,7 @@ export default {
   name: 'dashboard',
   data () {
     return {
-      projects: []
+      dashboard: []
     }
   },
   mounted () {
@@ -41,8 +42,12 @@ export default {
   },
   methods: {
     async getProjects () {
-      const response = await ProjectServices.get()
-      this.projects = response.data
+      await ProjectServices.get((res) => {
+        this.dashboard = res.data.projects
+      })
+    },
+    addProject () {
+      this.$router.push({name: 'addproject'})
     }
   }
 }

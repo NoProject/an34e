@@ -3,6 +3,7 @@ import modelUser from '../models/Model.User.js'
 export default class controllerUser {
 	getById(req, res){
 		let user = new modelUser(req.body.user);
+		console.log(user);
 		user.getById((data)=> {
 			res.send({data : data});
 		})
@@ -31,7 +32,9 @@ export default class controllerUser {
 
 	verifyLogin(req, res){
 		let user = new modelUser(req.body.user);
-		user.verify((data)=>{
+		user.verify((data,err)=>{
+			if(err)
+				console.log(err)
 			if(!data[0])
 				res.send({message : 'login error'})
 			else{
