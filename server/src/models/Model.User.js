@@ -7,8 +7,7 @@ export default class ModelUser {
 	getById(callback) {
 		let conn = new database();
 		conn.connection((data) => {
-			console.log(data)
-			data.collection('users').find().toArray()
+			data.collection('users').find({$or: [{username: this._data.name}, {email: this._data.email}]}).toArray()
 				.then((data) => {
 					callback(data);
 				})

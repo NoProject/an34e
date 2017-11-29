@@ -35,13 +35,36 @@ export default {
   },
   methods: {
     async register () {
-      await LoginServices.doSignIn({
-        user: {
-          name: this.username,
-          password: this.password,
-          email: this.email
+      if (this.username === undefined || this.password === undefined || this.email === undefined) {
+        if (this.username === undefined) {
+          alert('username cannot be empty')
         }
-      })
+        if (this.password === undefined) {
+          alert('password cannot be empty')
+        }
+        if (this.email === undefined) {
+          alert('email cannot be empty')
+        }
+      } else {
+        await LoginServices.doSignIn({
+          user: {
+            name: this.username,
+            password: this.password,
+            email: this.email
+          }
+        }, (res) => {
+          if (res.data.message === 'ok') {
+            alert('user created')
+          } else {
+            if (res.data.message === 'username') {
+              alert('username already exists')
+            }
+            if (res.data.message === 'email') {
+              alert('email already exists')
+            }
+          }
+        })
+      }
     }
   }
 }
