@@ -36,21 +36,30 @@ export default {
   },
   methods: {
     async login () {
-      await LoginServices.doLogin({
-        user: {
-          name: this.username,
-          password: this.password
+      if (this.username === undefined || this.password === undefined) {
+        if (this.username === undefined) {
+          alert('username cannot be empty')
         }
-      }, (res, err) => {
-        if (err) {
-          console.log(err)
+        if (this.password === undefined) {
+          alert('password cannot be empty')
         }
-        if (res.data.message === 'logged') {
-          this.$router.push({name: 'dashboard'})
-        } else {
-          alert('deu ruim')
-        }
-      })
+      } else {
+        await LoginServices.doLogin({
+          user: {
+            name: this.username,
+            password: this.password
+          }
+        }, (res, err) => {
+          if (err) {
+            console.log(err)
+          }
+          if (res.data.message === 'logged') {
+            this.$router.push({name: 'dashboard'})
+          } else {
+            alert('deu ruim')
+          }
+        })
+      }
     }
   }
 }

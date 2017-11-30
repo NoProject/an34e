@@ -10,7 +10,13 @@ export default {
         console.log(err)
       })
   },
-  doSignIn (params) {
+  doSignIn (params, callback) {
     api().post('/user/post', params)
+      .then((response) => {
+        callback(response)
+      })
+      .catch((err) => {
+        console.log(err)
+      })
   }
 }

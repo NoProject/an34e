@@ -3,7 +3,6 @@ import modelUser from '../models/Model.User.js'
 export default class controllerUser {
 	getById(req, res){
 		let user = new modelUser(req.body.user);
-		console.log(user);
 		user.getById((data)=> {
 			res.send({data : data});
 		})
@@ -11,9 +10,21 @@ export default class controllerUser {
 
 	save(req, res){
 		let user = new modelUser(req.body.user);
-		user.create((data)=>{
-			res.send({message : 'user created', data : data});
+		user.getById((data) => {
+			if(!data[0]) {
+				user.create((data)=>{
+					res.send({message : 'ok'});
+				})
+			}
+			else {
+				if (data[0].username === user._data.name)
+					res.send({message: 'username'})
+				else
+					if (data[0].email === user._data.email)
+						res.send({message: 'email'})
+			}
 		})
+
 	}
 
 	updateById(req, res){
