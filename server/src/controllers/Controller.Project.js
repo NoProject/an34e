@@ -4,17 +4,14 @@ export default class controllerProject {
 	getById(req, res){
 		let project = new modelProject(req.session.user)
 		project.getById((data)=> {
-			console.log(data)
 			res.send({projects : data});
 		})
 	}
 
 	save(req, res){
 		let project = new modelProject(req.body.project)
-		console.log(req.session.user)
 		project._data.managers = [req.session.user]
 		project.create((data)=> {
-			console.log(data)
 			res.send({message : 'adicionado'});
 		})
 	}

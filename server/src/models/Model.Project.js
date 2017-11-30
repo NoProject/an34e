@@ -6,6 +6,7 @@ export default class ModelProject {
 	}
 
 	getById(callback) {
+		console.log(this._data)
 		let conn = new database();
 		conn.connection((data) => {
 
@@ -25,8 +26,8 @@ export default class ModelProject {
 		conn.connection((data) => {
 			data.collection('projects').insertOne({
 				name: this._data.name,
-				startdate: this._data.startDate,
-				finishdate: this._data.finishDate,
+				startdate: this._data.startdate,
+				finishdate: this._data.finishdate,
 				description: this._data.description,
 				managers: this._data.managers,
 				developers: this._data.developers
@@ -52,8 +53,8 @@ export default class ModelProject {
 		conn.connection((data) => {
 			data.collection('projects').updateOne({ name: this._data.name }, {
 				$set: {
-					startdate: this._data.startDate,
-					finishdate: this._data.finishDate,
+					startdate: this._data.startdate,
+					finishdate: this._data.finishdate,
 					description: this._data.description,
 					managers: this._data.managers,
 					developers: this._data.developers

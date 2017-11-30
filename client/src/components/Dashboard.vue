@@ -1,12 +1,11 @@
 <template>
   <div class="dashboard">
-    <header></header>
+    <h1>Projects</h1>
   	<div class="container">
-      <div class="col-md-6">
-        <h1>Projects</h1>
-        <div class="projects" v-for="item in dashboard">
-          <h2>{{ item.name }}</h2>
-          <p>{{ item.description }}</p>  
+      <div class="projects" v-for="item in dashboard">
+        <div v-if="item.name !== null ">
+        <h2>{{ item.name }}</h2>
+        <p>{{ item.description }}</p>  
         </div>
       </div>
     </div>
@@ -38,3 +37,5 @@ export default {
   }
 }
 </script>
+
+<style type="text/css" src="../assets/css/dashboard.css"></style>
