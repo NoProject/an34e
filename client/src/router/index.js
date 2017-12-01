@@ -4,6 +4,7 @@ import login from '@/components/login'
 import dashboard from '@/components/Dashboard'
 import addproject from '@/components/addProject'
 import tasks from '@/components/tasks'
+import addTask from '@/components/addTask'
 // import don from '@/components/doanything'
 
 Vue.use(Router)
@@ -30,6 +31,11 @@ export default new Router({
       path: '/project/:name',
       name: 'tasks',
       component: tasks
+    },
+    {
+      path: '/add-task/:name',
+      name: 'add-task',
+      component: addTask
     }
   ]
 })

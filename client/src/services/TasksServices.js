@@ -9,5 +9,14 @@ export default {
       .catch((err) => {
         console.log(err)
       })
+  },
+  postTasks (params, callback) {
+    api().post('/task/post', params)
+      .then((res) => {
+        callback(res)
+      })
+      .catch((err) => {
+        console.log(err)
+      })
   }
 }

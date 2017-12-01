@@ -17,6 +17,7 @@
       	</div>
       </div>
     </div>
+    <router-link v-bind:to="{name: 'add-task'}">create a new task</router-link>
   </div>
 </template>
 

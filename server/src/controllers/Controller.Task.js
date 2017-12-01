@@ -13,7 +13,13 @@ export default class controllerTask{
 	save(req, res){
 		let task = new modelTask(req.body.task)
 		task.create((data)=> {
-			res.send({data : data});
+			console.log(data.message)
+			if (!data.queryFailure) {
+				res.send({message: "ok"})
+			} else {
+				res.send({message: "erro"})
+			}	
+			
 		})
 	}
 
