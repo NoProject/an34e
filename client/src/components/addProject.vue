@@ -1,8 +1,8 @@
 <template>
 <form method="post">
     <input type="text" name="name" v-model="name" class="form-control" placeholder="Enter Project Name" required>
-    <input type="date" name="startdate" v-model="startdate" class="form-control" placeholder="Enter Start Date" required>
-    <input type="date" name="finishdate" v-model="finishdate" class="form-control" placeholder="Enter Finish Date" required>
+    <input type="date" name="startdate" v-model="startDate" class="form-control" placeholder="Enter Start Date" required>
+    <input type="date" name="finishdate" v-model="finishDate" class="form-control" placeholder="Enter Finish Date" required>
     <input type="text" name="description" v-model="description" class="form-control" placeholder="Enter Description" required>
     <input @click="addProjects" value="Add Project">
 </form>
@@ -25,6 +25,7 @@ export default {
   },
   methods: {
     async addProjects () {
+      console.log(this.startDate)
       if (this.name === undefined || this.description === undefined || this.startDate === undefined || this.finishDate === undefined) {
         if (this.name === undefined) {
           alert('name cannot be empty')

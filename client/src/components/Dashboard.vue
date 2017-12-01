@@ -52,3 +52,5 @@ export default {
   }
 }
 </script>
+
+<style type="text/css" src="../assets/css/dashboard.css"></style>

@@ -3,6 +3,12 @@
   <head>
     <meta charset="utf-8">
     <title>Task Manager X</title>
+<<<<<<< HEAD
+=======
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+    <!-- <link rel="stylesheet" href="@/assets/css/login.css"/> -->
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:200,300,400,700,900|Oswald:200,300,400,700" rel="stylesheet">
+>>>>>>> 5aa63e7ef8ce553ed7f39910d4b568bdbcf77281
   </head>
   <body>
     <header class="logo">
@@ -82,4 +88,4 @@ export default {
   }
 }
 </script>
-<style src="../assets/css/login.css"> </style>
+<style type="text/css" src="../assets/css/login.css"></style>
