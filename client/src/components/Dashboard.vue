@@ -6,10 +6,10 @@
           <div class="col-md-8">
 
             <!-- search -->
-            <div class="search">
+            <!-- <div class="search">
               <input class="btn" type="search" name="search"/>
               Botao pesquisa
-              <span class="search-icon"></span>
+              <span class="search-icon"></span> -->
             </div>
           </div>
         </div>
@@ -20,7 +20,7 @@
         <h1>Projects</h1>
         <div class="projects" v-for="item in dashboard">
           <h2>{{ item.name }}</h2>
-          <p>{{ item.description }}</p>  
+          <p>{{ item.description }}</p>
         </div>
       </div>
     </div>

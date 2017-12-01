@@ -20,8 +20,8 @@
         <div class="col-md-4 col-sm-6 col-xs-12">
           <div class="login-area">
             <div class="top-nav">
-              <a class="sign-in" href="#" @click="hideSignIn">Sign in</a>
-              <a class="sign-up" href="#" @click="hideSignUp">Register</a>
+              <a class="sign-in" href="" @click="hideSignIn">Sign in</a>
+              <a class="sign-up" href="" @click="hideSignUp">Register</a>
             </div>
               <Sign-in id="sign-in"></Sign-in>
               <Sign-up id="sign-up" style="display: none"></Sign-up>
