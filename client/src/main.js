@@ -5,6 +5,10 @@ import App from './App'
 import router from './router'
 import signin from './components/Signin'
 import signup from './components/Signup'
+import header from './components/header'
+import footer from './components/footer'
+import aside from './components/aside'
+
 import axios from 'axios'
 // import jQuery from 'jquery'
 // global.jQuery = jQuery
@@ -16,8 +20,11 @@ window.$ = window.jQuery = require('jquery')
 
 Vue.config.productionTip = false
 // Vue.use(jquery)
-Vue.component('Sign-in', signin)
-Vue.component('Sign-up', signup)
+Vue.component('sign-in', signin)
+Vue.component('sign-up', signup)
+Vue.component('logo', header)
+Vue.component('rodape', footer)
+Vue.component('barra-lateral', aside)
 /* eslint-disable no-new */
 new Vue({
   el: '#app',

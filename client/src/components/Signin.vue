@@ -14,7 +14,7 @@
           <span class="keep"> Keep me signed in </span>
           <a class="forgot" href="#">Forgot your password?</a>
         </div>
-        <input class="btn btn-primary" @click="login" value="Sign in">
+        <input class="btn btn-primary btn-orange" @click="login" value="Sign in">
       </form>
     </div>
   </div>

@@ -1,19 +1,21 @@
 <template>
   <div class="dashboard">
+    <logo class="cabecalho"></logo>
     <header>
+      <barra-lateral>
+      </barra-lateral>
       <div class="container">
         <div class="row">
-          <div class="col-md-8">
-
-            <!-- search -->
-            <!-- <div class="search">
+          <div class="col-md-12">
+            <!-- <img src="../assets/img/"/> -->
+             <!-- search
+             <div class="search">
               <input class="btn" type="search" name="search"/>
               Botao pesquisa
               <span class="search-icon"></span> -->
             </div>
           </div>
         </div>
-      </div>
     </header>
   	<div class="container">
       <div class="col-md-6">
@@ -25,7 +27,10 @@
       </div>
     </div>
     <button @click="addProject">Add Project</button>
+
+    <rodape></rodape>
   </div>
+
 </template>
 <script>
 import ProjectServices from '@/services/ProjectServices'

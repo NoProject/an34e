@@ -1,3 +1,24 @@
+body{
+	background: #EDEEF5;
+}
+.cabecalho{
+	/*padding: 20px!important;*/
+	padding-left: 10px;
+	background: orange!important;
+	text-align: left;
+	font-size: 22px;
+	font-family: 'Montserrat', sans-serif;
+	text-transform: uppercase;
+	letter-spacing: -2px;
+	font-weight: 900
+}
+.cabecalho .task{
+	color: #fff;
+	font-size: 26px;
+	letter-spacing: -2px;
+	font-family: 'Montserrat', sans-serif;
+}
+/*}
 .container {
 	display: flex;
 	max-width: 80%;
@@ -20,7 +41,6 @@
 }
 
 .projects p {
-	/*display: none;*/
 	opacity: 1;
 }
 
@@ -33,4 +53,4 @@
 
 .projects h2:hover {
 	display : inline;
-}
+}*/

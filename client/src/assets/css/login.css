@@ -153,7 +153,7 @@ input[type=checkbox]{
   text-align: right;
 }
 
-.fields .btn{
+.fields .btn-orange{
   width: 100%;
   background: #ff8a00;
   border: none;
@@ -162,19 +162,19 @@ input[type=checkbox]{
   font-weight: bold;
 }
 /*hover*/
-.fields .btn:hover{
-  cursor: pointer;
+.fields .btn-orange:hover{
+  cursor: pointer!important;
   background: #ff6600;
 }
 /*focus*/
-.btn-primary.focus, .btn-primary:focus {
-    box-shadow: 0 0 0 0.2rem rgba(251, 124, 20, 1);
+.btn-orange.focus, .btn-orange:focus {
+    /*box-shadow: 0 0 0 0.2rem rgba(251, 124, 20, 1);*/
     background: #ff6600;
 }
 /*active*/
-.btn-primary.active, .btn-primary:active {
+.btn-orange.active, .btn-orange:active {
     background: #ff6600!important;
-    box-shadow: 0 0 0 0.2rem rgba(251, 124, 20, 1)!important;
+    /*box-shadow: 0 0 0 0.2rem rgba(251, 124, 20, 1)!important;*/
 }
 
 .fields .form-control:focus{

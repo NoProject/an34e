@@ -14,7 +14,7 @@
         <!-- <label for="password">Repeat Password</label>
         <input type="password" class="form-control" id="password" placeholder="Password"> -->
 
-        <input class="btn btn-primary" @click="register" value="Register for free">
+        <input class="btn btn-primary btn-orange" @click="register" value="Register for free">
       </form>
     </div>
   </div>

@@ -1,20 +1,9 @@
 <template>
 <html class="login">
-  <head>
-    <meta charset="utf-8">
-    <title>Task Manager X</title>
-<<<<<<< HEAD
-=======
-    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
-    <!-- <link rel="stylesheet" href="@/assets/css/login.css"/> -->
-    <link href="https://fonts.googleapis.com/css?family=Montserrat:200,300,400,700,900|Oswald:200,300,400,700" rel="stylesheet">
->>>>>>> 5aa63e7ef8ce553ed7f39910d4b568bdbcf77281
-  </head>
   <body>
     <header class="logo">
       <span class="task">Task</span>Manager <span class="x">x</span>
     </header>
-
    <div class="pre-loader"></div>
     <main class="container">
       <div class="row">
@@ -26,24 +15,17 @@
         <div class="col-md-4 col-sm-6 col-xs-12">
           <div class="login-area">
             <div class="top-nav">
-              <a class="sign-in" href="" @click="hideSignIn">Sign in</a>
-              <a class="sign-up" href="" @click="hideSignUp">Register</a>
+              <a class="sign-in" href="#" @click="hideSignIn">Sign in</a>
+              <a class="sign-up" href="#" @click="hideSignUp">Register</a>
             </div>
-              <Sign-in id="sign-in"></Sign-in>
-              <Sign-up id="sign-up" style="display: none"></Sign-up>
+              <sign-in id="sign-in"></sign-in>
+              <sign-up id="sign-up" style="display: none"></sign-up>
           </div>
         </div>
 
       </div>
-
-
+    <rodape></rodape>
     </main>
-    <footer>
-      made with <span>♡</span> at
-      <a target="_blank" href="https://github.com/NoProject/an34e">
-        <img src="../assets/img/Octocat.png"/>
-      </a>
-    </footer>
 
   </body>
 </html>

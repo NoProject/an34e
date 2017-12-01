@@ -1,4 +1,4 @@
-<template>
+  <template>
 <form method="post">
     <input type="text" name="name" v-model="name" class="form-control" placeholder="Enter Project Name" required>
     <input type="date" name="startdate" v-model="startDate" class="form-control" placeholder="Enter Start Date" required>
