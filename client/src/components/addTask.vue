@@ -50,7 +50,8 @@
               description: this.description,
               deadline: this.deadline,
               priority: this.priority,
-              project_owner: this.$route.params.name
+              project_owner: this.$route.params.name,
+              status: 0
             }
           }, (res) => {
             if (res.data.message === 'ok') {

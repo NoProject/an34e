@@ -4,7 +4,7 @@
   	<div class="container">
       <div class="projects" v-for="item in dashboard">
         <div v-if="item.name !== null ">
-        <router-link v-bind:to="{name: 'tasks', params: {name : item .name} }">  
+        <router-link v-bind:to="{name: 'tasks', params: {name : item.name} }">  
           {{ item.name }}
         </router-link>
         <p>{{ item.description }}</p>  

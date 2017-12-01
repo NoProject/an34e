@@ -3,21 +3,27 @@
     <div class="show-tasks">
       <div class="high-priority">
       	<div v-for="item in highTasks">
-      		<h3>{{item.name}}</h3	>
+          <router-link v-bind:to="{name: 'see-task', params: {id: item._id} }">
+            <h3>{{item.name}}</h3>
+          </router-link>
       	</div>
       </div>
       <div class="med-priority">
 	      <div v-for="item in medTasks">
-	      	<h3>{{item.name}}</h3>
+          <router-link v-bind:to="{name: 'see-task', params: {id: item._id}}">
+	      	  <h3>{{item.name}}</h3>
+          </router-link>
 	      </div>
       </div>
       <div class="low-priority">
       	<div v-for="item in lowTasks">
-      		<h3>{{item.name}}</h3>
+          <router-link v-bind:to="{name: 'see-task', params: {id: item._id} }">
+            <h3>{{item.name}}</h3>
+          </router-link>
       	</div>
       </div>
     </div>
-    <router-link v-bind:to="{name: 'add-task'}">create a new task</router-link>
+    <router-link v-bind:to="{name: 'add-task', params: 'this.$route.params.name'}">create a new task</router-link>
   </div>
 </template>
 

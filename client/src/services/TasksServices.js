@@ -18,5 +18,15 @@ export default {
       .catch((err) => {
         console.log(err)
       })
+  },
+/*  getTask (params, callback) {
+    console.log(params)
+    api().get('/task/see/' + params.id)
+      .then((res) => {
+        callback(res)
+      })
+      .catch((err) => {
+        console.log(err)
+      })*/
   }
 }

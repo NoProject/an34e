@@ -5,6 +5,7 @@ import dashboard from '@/components/Dashboard'
 import addproject from '@/components/addProject'
 import tasks from '@/components/tasks'
 import addTask from '@/components/addTask'
+/* import seeTask from '@/components/seeTask' */
 // import don from '@/components/doanything'
 
 Vue.use(Router)
@@ -37,5 +38,11 @@ export default new Router({
       name: 'add-task',
       component: addTask
     }
+    /* ,
+    {
+      path: '/see-task/see/:id',
+      name: 'see-task',
+      component: seeTask
+    } */
   ]
 })

@@ -5,6 +5,19 @@ export default class ModelTask {
 		this._data = data
 	}
 
+	get(callback){
+		let conn = new database();
+		conn.connection((data) => {
+			data.collection('tasks').find({_id: this.data.id}).toArray()
+				.then((data) => {
+					callback(data)
+				})
+				.catch((err) => {
+					console.log(err)
+				})
+		})
+	}
+
 	getById(callback) {
 		let conn = new database();
 		conn.connection((data) => {
