@@ -6,7 +6,7 @@ let routerTask = express.Router()
 
 let task = new controllerTask()
 
-routerTask.get('/', (req, res)=> {
+routerTask.get('/:name', (req, res)=> {
 	task.getById(req, res)
 })
 

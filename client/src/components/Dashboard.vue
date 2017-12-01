@@ -4,7 +4,9 @@
   	<div class="container">
       <div class="projects" v-for="item in dashboard">
         <div v-if="item.name !== null ">
-        <h2>{{ item.name }}</h2>
+        <router-link v-bind:to="{name: 'tasks', params: {name : item  .name} }">  
+          {{ item.name }}
+        </router-link>
         <p>{{ item.description }}</p>  
         </div>
       </div>
@@ -38,4 +40,4 @@ export default {
 }
 </script>
 
-<style type="text/css" src="../assets/css/dashboard.css"></style>
+<style type="text/css" src="../assets/css/dashboard.css" scoped></style>

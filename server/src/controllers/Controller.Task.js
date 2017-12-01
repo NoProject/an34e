@@ -2,9 +2,11 @@ import modelTask from '../models/Model.Task.js'
 
 export default class controllerTask{
 	getById(req, res){
-		let task = new modelTask(req.body.task)
-		task.getById((data)=> {
-			res.send({data : data});
+		console.log(req.params.name)
+		let task = new modelTask({project_owner: req.params.name})
+		console.log(task)
+		task.getById((data)=> {	
+			res.send({tasks : data});
 		})
 	}
 

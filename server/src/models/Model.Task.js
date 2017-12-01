@@ -8,7 +8,7 @@ export default class ModelTask {
 	getById(callback) {
 		let conn = new database();
 		conn.connection((data) => {
-			data.collection('tasks').find().toArray()
+			data.collection('tasks').find({project_owner: this._data.project_owner}).toArray()
 				.then((data) => {
 					callback(data);
 				})
