@@ -18,7 +18,7 @@ routerTask.put('/put', (req, res)=> {
 	task.updateById(req, res)
 })
 
-routerTask.delete('/delete', (req, res)=> {
+routerTask.delete('/delete:id', (req, res)=> {
 	task.deleteById(req, res)
 })
 

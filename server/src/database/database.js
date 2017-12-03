@@ -1,5 +1,4 @@
 import mongodb from 'mongodb'
-import autoIncrement from 'mongodb-autoincrement'
 
 export default class database{
 	connection(callback){
@@ -12,5 +11,9 @@ export default class database{
 			.catch((err)=>{
 				console.log(err)
 			})
+	}
+	getObjId(callback) {
+		let objId = mongodb.ObjectID;
+		callback(objId);
 	}
 }

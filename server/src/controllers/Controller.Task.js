@@ -31,16 +31,17 @@ export default class controllerTask{
 				res.send({task: task})	
 			})
 		} else {	
-			task.update((data)=> {
-				res.send({message : 'task updated', data : data})
+			task.update(() => {
+				res.send({task: task})
 			})
 		}
 	}
 
 	deleteById(req, res){
-		let task = new modelTask(req.body.task)
+		let task = new modelTask(req.params.id)
+		console.log(task)
 		task.delete((data)=> {
-			res.send({message : 'task deleted', data : task})
+			res.send({deleted: data.deletedCount})
 		})
 	}
 }
