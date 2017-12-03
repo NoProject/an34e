@@ -5,6 +5,7 @@ import App from './App'
 import router from './router'
 import signin from './components/Signin'
 import signup from './components/Signup'
+
 import axios from 'axios'
 // import jQuery from 'jquery'
 // global.jQuery = jQuery

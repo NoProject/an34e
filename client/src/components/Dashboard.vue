@@ -1,21 +1,25 @@
 <template>
   <div class="dashboard">
-    <h1>Projects</h1>
-  	<div class="container">
-      <div class="projects" v-for="item in dashboard">
-        <div v-if="item.name !== null ">
-        <router-link v-bind:to="{name: 'tasks', params: {name : item.name} }">  
-          {{ item.name }}
-        </router-link>
-        <p>{{ item.description }}</p>  
+    <div class="main">
+      <h1>Projects<br></h1>
+      <div class="container">
+        <div class="projects" v-for="item in dashboard">
+          <div v-if="item.name !== null ">
+          <router-link v-bind:to="{name: 'tasks', params: {name : item.name} }">  
+            {{ item.name }}
+          </router-link>
+          <p>{{ item.description }}</p>  
+          </div>
         </div>
       </div>
+      <button @click="addProject">Add Project</button>
     </div>
-    <button @click="addProject">Add Project</button>
+    <addProject id="addProject"></addProject>
   </div>
 </template>
 <script>
 import ProjectServices from '@/services/ProjectServices'
+import addProject from './addProject.vue'
 
 export default {
   name: 'dashboard',
@@ -26,6 +30,7 @@ export default {
   },
   mounted () {
     this.getProjects()
+    window.$('#addProject').hide()
   },
   methods: {
     async getProjects () {
@@ -34,8 +39,13 @@ export default {
       })
     },
     addProject () {
-      this.$router.push({name: 'addproject'})
+      window.$('.main').fadeOut(() => {
+        window.$('#addProject').fadeIn()
+      })
     }
+  },
+  components: {
+    addProject: addProject
   }
 }
 </script>

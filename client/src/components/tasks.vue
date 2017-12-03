@@ -22,13 +22,15 @@
           </router-link>
       	</div>
       </div>
+      <button @click="addTask">Create task</button>
     </div>
-    <router-link v-bind:to="{name: 'add-task', params: 'this.$route.params.name'}">create a new task</router-link>
+    <addTask id="addTask"></addTask>
   </div>
 </template>
 
 <script>
   import TasksServices from '@/services/TasksServices.js'
+  import addTask from './addTask.vue'
   
   export default {
     name: 'tasks',
@@ -41,6 +43,7 @@
     },
     mounted () {
       this.getTasks()
+      window.$('#addTask').hide()
     },
     methods: {
       async getTasks () {
@@ -58,7 +61,15 @@
             return item.priority === '1'
           })
         })
+      },
+      addTask () {
+        window.$('.show-tasks').fadeOut(() => {
+          window.$('#addTask').fadeIn()
+        })
       }
+    },
+    components: {
+      addTask: addTask
     }
   }
 </script>

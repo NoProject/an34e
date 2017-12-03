@@ -54,17 +54,12 @@ export default {
   name: 'login',
   methods: {
     hideSignIn () {
-      console.log(2)
-      let signIn = document.getElementById('sign-up')
-      let signUp = document.getElementById('sign-in')
-      signIn.style.display = 'none'
-      signUp.style.display = 'block'
+      window.$('#sign-up').hide()
+      window.$('#sign-in').show()
     },
     hideSignUp () {
-      let signIn = document.getElementById('sign-up')
-      let signUp = document.getElementById('sign-in')
-      signIn.style.display = 'block'
-      signUp.style.display = 'none'
+      window.$('#sign-up').show()
+      window.$('#sign-in').hide()
     },
     loading () {
       window.$(document).ready(function () {

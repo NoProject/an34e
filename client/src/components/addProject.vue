@@ -1,11 +1,14 @@
   <template>
-<form method="post">
-    <input type="text" name="name" v-model="name" class="form-control" placeholder="Enter Project Name" required>
-    <input type="date" name="startdate" v-model="startDate" class="form-control" required>
-    <input type="date" name="finishdate" v-model="finishDate" class="form-control" required>
-    <input type="text" name="description" v-model="description" class="form-control" placeholder="Enter Description" required>
-    <input @click="addProjects" value="Add Project">
-</form>
+    <div class="addProject">
+      <form method="post">
+        <input type="text" name="name" v-model="name" class="form-control" placeholder="Enter Project Name" required>
+        <input type="date" name="startdate" v-model="startDate" class="form-control" required>
+        <input type="date" name="finishdate" v-model="finishDate" class="form-control" required>
+        <input type="text" name="description" v-model="description" class="form-control" placeholder="Enter Description" required>
+        <input @click="addProjects" value="Add Project">
+    </form>
+    <button @click="back">Back</button>
+  </div>
 </template>
 
 <script>
@@ -52,11 +55,17 @@ export default {
         }, (res) => {
           if (res.data.message === 'adicionado') {
             alert('deu bom')
+            this.$parent.getProjects()
           } else {
             alert('deu ruim')
           }
         })
       }
+    },
+    back () {
+      window.$('#addProject').fadeOut(() => {
+        window.$('.main').fadeIn()
+      })
     }
   }
 }

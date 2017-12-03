@@ -10,6 +10,7 @@
 			<input type="radio" class="form-control" v-model="priority" name="priority"	value="1" required>Low<br>
 			<input type="button" v-on: @click="addTask">add task</button>
 		</form>
+    <button @click="back"></button>
 	</div>
 </template>
 
@@ -56,12 +57,18 @@
           }, (res) => {
             if (res.data.message === 'ok') {
               alert('task created')
+              this.$parent.getTasks()
             } else {
               alert('error')
             }
           }
           )
         }
+      },
+      back () {
+        window.$('#addTask').fadeOut(() => {
+          window.$('.show-tasks').fadeIn()
+        })
       }
     }
   }
