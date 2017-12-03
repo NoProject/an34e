@@ -1,13 +1,6 @@
 import modelTask from '../models/Model.Task.js'
 
 export default class controllerTask{
-	get(req, res){
-		console.log('hey')
-		let task = new modelTask({id: req.params.id})
-		task.get((data) => {
-			res.send({task: data})
-		})
-	}
 
 	getById(req, res){
 		let task = new modelTask({project_owner: req.params.name})
@@ -31,9 +24,17 @@ export default class controllerTask{
 
 	updateById(req, res){
 		let task = new modelTask(req.body.task)
-		task.update((data)=> {
-			res.send({message : 'task updated', data : data})
-		})
+		if(task._data.do == 'fill') {
+			console.log('eita')
+			task._data.user_on = req.session.user
+			task.updateUserOn(() => {
+				res.send({task: task})	
+			})
+		} else {	
+			task.update((data)=> {
+				res.send({message : 'task updated', data : data})
+			})
+		}
 	}
 
 	deleteById(req, res){

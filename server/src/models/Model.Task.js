@@ -5,19 +5,6 @@ export default class ModelTask {
 		this._data = data
 	}
 
-	get(callback){
-		let conn = new database();
-		conn.connection((data) => {
-			data.collection('tasks').find({_id: this.data.id}).toArray()
-				.then((data) => {
-					callback(data)
-				})
-				.catch((err) => {
-					console.log(err)
-				})
-		})
-	}
-
 	getById(callback) {
 		let conn = new database();
 		conn.connection((data) => {
@@ -35,7 +22,7 @@ export default class ModelTask {
 	update(callback) {
 		let conn = new database();
 		conn.connection((data) => {
-			data.collection('tasks').updateOne({ name: this._data.name }, {
+			data.collection('tasks').updateOne({ _id: this._data._id }, {
 				$set: {
 					name: this._data.name,
 					description: this._data.description,
@@ -53,6 +40,42 @@ export default class ModelTask {
 					console.log(err);
 				})
 			data.close();
+		})
+	}
+
+	updateUserOn(callback) {
+		let conn = new database();
+		conn.connection((data) => {
+			data.collection('users').find({ username: this._data.user_on }).toArray()
+				.then((res) => {
+					console.log(res[0]._id)
+					console.log(this._data._id)
+					this._data.user_on = {id: res[0]._id, name: res[0].username};
+					data.collection('tasks').updateOne({name: this.name},{
+						$set: {
+							name: this._data.name,
+							description: this._data.description,
+							deadline: this._data.deadline,
+							user_on: this._data.user_on,
+							project_owner: this._data.project_owner,
+							priority: this._data.priority,
+							status: this._data.status	
+						}
+					})
+						.then((response) => {
+							callback()
+						})
+						.catch((err) => {
+							console.log(err)
+						})
+					data.close();
+				})
+				.catch((err) => {
+					console.log(err);
+				})
+				 /*{
+				
+				}*/
 		})
 	}
 

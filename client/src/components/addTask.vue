@@ -10,7 +10,7 @@
 			<input type="radio" class="form-control" v-model="priority" name="priority"	value="1" required>Low<br>
 			<input type="button" v-on: @click="addTask">add task</button>
 		</form>
-    <button @click="back"></button>
+    <button @click="back">Back</button>
 	</div>
 </template>
 
@@ -30,7 +30,6 @@
     },
     methods: {
       async addTask () {
-        console.log(this.description)
         if (this.name === '' || this.description === '' || this.deadline === '' || this.priority === '') {
           if (this.name === '') {
             alert('name cannot be empty')
