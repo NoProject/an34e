@@ -18,5 +18,17 @@ export default {
       .catch((err) => {
         console.log(err)
       })
+  },
+  put (params, callback) {
+    api().put('/project/put', params)
+      .then((res) => {
+        callback()
+      })
+  },
+  deleteProject (params, callback) {
+    api().delete('/project/delete' + params.name)
+      .then((res) => {
+        callback()
+      })
   }
 }

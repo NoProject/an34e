@@ -18,15 +18,16 @@ export default class controllerProject {
 
 	updateById(req, res){
 		let project = new modelProject(req.body.project)
-		project.update((data)=> {
-			res.send({data : data});
+		project.beforeEdit = req.body.beforeEdit
+		project.update(()=> {
+			res.send({edited : 'edited'});
 		})
 	}
 
 	deleteById(req, res){
-		let project = new modelProject(req.body.project)
-		project.delete((data)=> {
-			res.send({data : data});
+		let project = new modelProject(req.params.name)
+		project.delete(()=> {
+			res.send({message: 'deleted'});
 		})
 	}
 }

@@ -28,7 +28,6 @@ export default {
   },
   methods: {
     async addProjects () {
-      console.log(this.startDate)
       if (this.name === undefined || this.description === undefined || this.startDate === undefined || this.finishDate === undefined) {
         if (this.name === undefined) {
           alert('name cannot be empty')
@@ -54,10 +53,10 @@ export default {
           }
         }, (res) => {
           if (res.data.message === 'adicionado') {
-            alert('deu bom')
+            alert('Project created')
             this.$parent.getProjects()
           } else {
-            alert('deu ruim')
+            alert('Error')
           }
         })
       }

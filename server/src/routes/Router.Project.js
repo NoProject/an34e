@@ -18,7 +18,7 @@ routerProject.put('/put', (req, res)=> {
 	project.updateById(req, res)
 })
 
-routerProject.delete('/delete', (req, res)=> {
+routerProject.delete('/delete:name', (req, res)=> {
 	project.deleteById(req, res)
 })
 

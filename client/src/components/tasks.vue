@@ -23,9 +23,12 @@
       	</div>
       </div>
       <button @click="addTask">Create task</button>
+      <button @click="editP">Edit Project</button>
+      <button @click="back">Back</button>
     </div>
     <addTask id="addTask"></addTask>
     <seeTask id="seeTask" :task="this.task"></seeTask>
+    <editProject id="edit-project"></editProject>
   </div>
 </template>
 
@@ -33,6 +36,7 @@
   import TasksServices from '@/services/TasksServices.js'
   import addTask from './addTask.vue'
   import seeTask from './seeTask'
+  import editProject from './editProject'
   
   export default {
     name: 'tasks',
@@ -48,6 +52,7 @@
       this.getTasks()
       window.$('#addTask').hide()
       window.$('#seeTask').hide()
+      window.$('#edit-project').hide()
     },
     methods: {
       async getTasks () {
@@ -77,11 +82,20 @@
           this.task = item
           console.log(this.task.user_on)
         })
+      },
+      editP () {
+        window.$('.show-tasks').fadeOut(() => {
+          window.$('#edit-project').fadeIn()
+        })
+      },
+      back () {
+        this.$router.push('/dashboard')
       }
     },
     components: {
       addTask: addTask,
-      seeTask: seeTask
+      seeTask: seeTask,
+      editProject: editProject
     }
   }
 </script>
